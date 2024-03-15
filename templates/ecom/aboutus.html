@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MacMuse</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+
+
+  /* banner */
+
+  .all .banner{
+      width: 100%;
+      height: 500px;
+      background-color: rgb(239, 230, 230);
+  }
+  
+  .all .banner .h{
+      width: 100%;
+      height: 5rem;
+      box-shadow: 10px 10px 30px rgba(1, 197, 167, 0.594);
+      padding: 10px;
+      text-align: center;
+  }
+  .all .banner .h h2{
+      padding: 15px;
+  }
+  .all .banner .hh{
+      padding-top: 25px;
+  }
+  .contain{
+      padding: 3em;
+      display: grid;
+      grid-gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  }
+  .contain .quote:hover{
+      box-shadow: 10px 10px 30px rgba(0,0,0,0.7);
+  }
+  .quote{
+      padding: 2em;
+      border-radius: .5em;
+      box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+  }
+  p{
+      margin-top: 0;
+  }
+  span{
+      font-weight: bold;
+      /* position: relative; */
+      margin-left: 15px;
+  }
+  .contain .quote span::before{
+      content: "";
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      border-bottom: 1px solid black;
+      left: -15px;
+  }
+  
+  .banner .bu{
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      padding: 20px;
+  }
+  
+  .banner button{
+      width: 400px;
+      height: 5rem;
+      background: transparent;
+      border: 1px solid #050505;
+      border-radius: 10px;
+      background-color: #04261f;
+  }
+  .banner button a{
+     font-size: 30px;
+  }
+  .banner button:hover{
+      background-color: rgb(8, 28, 20);
+  }
+  .banner button a:hover{
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+  }
+  
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+<abinf><!-- Banner side -->
+  <div class="banner">
+      <div class="hh">
+          <div class="h">
+              <h2>SOME INFORMATION ABOUT THE CATHOLIC YOUTH ORGANISATION</h2> <br>
+          </div>
+      </div>
+      
+      <div class="contain">
+          <div class="quote">
+              <h3>WHAT IS THE C.Y.O?</h3>
+              <p>
+                  The C.Y.O is an Organization which taking the parish as its base, and without regard to social class or
+                  profession, provides for young people a Christian Community life order to prepare them for active co-operation in
+                  building a living church and a better world.
+                  Further, it is the objective of the organization to inspire, direct and guide the natural creative qualities
+                  and desire of young people by promoting recreational, educational, cultural and religious programme
+                  that will adequately meet their physical, mental and spiritual needs. <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+          <div class="quote">
+              <h3>THE C.Y.O LAWS (CODES)</h3>
+              <p>
+                  1. A Crusader is honest. <br>
+                  2. A Crusader is clean. <br>
+                  3. A Crusader attends all meetings of the movement. <br>
+                  4. A Crusader prays regularly. <br>
+                  5. A Crusader is kind and helpful. <br>
+                  6. A Crusader plays fair and is a good loser. <br>
+                  7. A Crusader must give a good example. <br>
+                  8. A Crusader is all out for God and Ghana. <br>
+                  9. A Crusader does his day’s work well. <br>
+                  10. A Crusader is to serve and not to be served. <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+          <div class="quote">
+              <h3>THE C.Y.O. ANTHEM</h3>
+              <p>
+                  An army of Youth Flying the Standard of Truth <br>
+                  We’re fighting for Christ the Lord. <br>
+                  Heads lifted high Catholic action our cry. <br>
+                  And the Cross our only sword. <br>
+                  On earth’s battlefield,
+                  Never advantage we’ll yield, <br>
+                  As dauntlessly on we swing. <br>
+                  Crusaders True! Dare and do! <br>
+                  ‘Neath the Queen’s White and Blue. <br>
+                  For our Flag, for our Faith
+                  For Christ the King. <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+          <div class="quote">
+              <h3>THE C.Y.O PRAYER</h3>
+              <p>
+                  Lord Jesus, I offer you this day all my work, my hopes and struggles, my joys and sorrows. Grant me and
+                  my fellow Crusaders the grace to think like you, to work with you and to live in you. Help me to love you
+                  with all my heart and serve you with all my strength. Your Kingdom come in all our schools, offices,
+                  farms, workshops and homes. May those of us who today may be in danger of sin remain in your grace
+                  and may those who have died in our apostolate rest in peace. <br>
+                  <br>
+                  Jesus our brother and leader, we give our whole life to you. Help all men to know and love you. Make us
+                  always do what is pleasing to you. Amen <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+          <div class="quote">
+              <h3>WHO CAN BE A MEMBER OF THE C.Y.O.</h3>
+              <p>The C.Y.O is first of all for Catholic Youth, but it is open to all
+                  other Youth who wish to work for the advancement of its aims.  <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+          <div class="quote">
+              <h3>THE AIM OF THE ORGANIZATION</h3>
+              <p>Our aim is to become true friends of God and better citizens of our
+                  Country and to help others to do the same <br>
+                  <span>My Name</span>
+              </p>
+          </div>
+      </div>
+
+     <div class="bu">
+      <button>
+        <a href="#">Click here to see more info.</a>
+      </button>
+    </div>
+
+  </div>
+</abinf>
+<br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+</html>
