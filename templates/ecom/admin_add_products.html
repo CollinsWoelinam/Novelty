@@ -8,12 +8,13 @@
       text-decoration: none;
     }
 
+    
+
     .note {
       text-align: center;
       height: 80px;
-      background: #0F2027;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: gray; 
+      border: 1px solid black;
       color: #fff;
       font-weight: bold;
       line-height: 80px;
@@ -21,7 +22,7 @@
 
     .form-content {
       padding: 5%;
-      border: 1px solid #ced4da;
+      border: 1px solid black;
       margin-bottom: 2%;
     }
 
@@ -35,8 +36,11 @@
       padding: 1%;
       width: 20%;
       cursor: pointer;
-      background: #009414;
-      color: #fff;
+      background: #cca300;
+      color: white;
+      border: 2px solid white;
+      margin-left: 40%;
+      margin-top: 2%;
     }
 
     .menu {
@@ -49,43 +53,42 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <br><br><br><br><br><br>
-<!------ update page for doctor by admin(sumit)  ---------->
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div class="container register-form">
-    <div class="form">
-      <div class="note">
-        <p>ADD SCRIPTS</p>
-      </div>
-      <div class="form-content">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="">Script Tittle</label>
-              {% render_field productForm.name class="form-control" placeholder="Product Name" %}
-            </div>
-            <div class="form-group">
-              <label for="">Short Description</label>
-              {% render_field productForm.description class="form-control" placeholder="Description" %}
-            </div>
-
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="">Price ($)</label>
-              {% render_field productForm.price class="form-control" placeholder="52" %}
-            </div>
-            <div class="form-group">
-              <label for="">Script Image</label>
-              {% render_field productForm.product_image class="form-control" placeholder="product_image" %}
-            </div>
-
-
-          </div>
+<body style="background: gold;">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Add Novels</p>
         </div>
-        <button type="submit" class="btnSubmit">ADD</button>
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Novel Title</label>
+                {% render_field productForm.name class="form-control" placeholder="Novel Name" %}
+              </div>
+              <div class="form-group">
+                <label for="">Story Line</label>
+                {% render_field productForm.description class="form-control" placeholder="Genre" %}
+              </div>
+  
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">Price ($)</label>
+                {% render_field productForm.price class="form-control" placeholder="$0.99" %}
+              </div>
+              <div class="form-group">
+                <label for="">Book Cover</label>
+                {% render_field productForm.product_image class="form-control" placeholder="product_image" %}
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">ADD</button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</body>
 {% endblock content %}

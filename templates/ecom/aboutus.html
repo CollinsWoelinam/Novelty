@@ -1,198 +1,180 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Novelty</title>
+    <style media="screen">
+      .all .banner {
+        width: 100%;
+        height: 500px;
+        background-color: rgb(239, 230, 230);
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>MacMuse</title>
-  <style media="screen">
-    .footer{
-      position: fixed;
-    }
+      .all .banner .h {
+        width: 100%;
+        height: 5rem;
+        box-shadow: 10px 10px 30px rgba(1, 197, 167, 0.594);
+        padding: 10px;
+        text-align: center;
+      }
+      .all .banner .h h2 {
+        padding: 15px;
+      }
+      h2 {
+        margin-left: 35%;
+        text-shadow: 3px 3px 5px #b18f05;
+      }
+      .all .banner .hh {
+        padding-top: 25px;
+      }
+      .contain {
+        padding: 3em;
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+      }
+      p {
+        margin-top: 0;
+      }
+      span {
+        font-weight: bold;
+        margin-left: 15px;
+      }
+      .contain .quote span::before {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        border-bottom: 1px solid black;
+        left: -15px;
+      }
 
+      .banner .bu {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 20px;
+      }
 
-  /* banner */
+      .banner button {
+        width: 400px;
+        height: 5rem;
+        background: transparent;
+        border: 1px solid #050505;
+        border-radius: 10px;
+        background-color: #04261f;
+      }
+      .banner a {
+        font-size: 30px;
+      }
+      .banner button:hover {
+        background-color: rgb(8, 28, 20);
+      }
+      .banner button a:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+    </style>
+  </head>
 
-  .all .banner{
-      width: 100%;
-      height: 500px;
-      background-color: rgb(239, 230, 230);
-  }
-  
-  .all .banner .h{
-      width: 100%;
-      height: 5rem;
-      box-shadow: 10px 10px 30px rgba(1, 197, 167, 0.594);
-      padding: 10px;
-      text-align: center;
-  }
-  .all .banner .h h2{
-      padding: 15px;
-  }
-  .all .banner .hh{
-      padding-top: 25px;
-  }
-  .contain{
-      padding: 3em;
-      display: grid;
-      grid-gap: 2em;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-  }
-  .contain .quote:hover{
-      box-shadow: 10px 10px 30px rgba(0,0,0,0.7);
-  }
-  .quote{
-      padding: 2em;
-      border-radius: .5em;
-      box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
-  }
-  p{
-      margin-top: 0;
-  }
-  span{
-      font-weight: bold;
-      /* position: relative; */
-      margin-left: 15px;
-  }
-  .contain .quote span::before{
-      content: "";
-      position: absolute;
-      height: 10px;
-      width: 10px;
-      border-bottom: 1px solid black;
-      left: -15px;
-  }
-  
-  .banner .bu{
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      padding: 20px;
-  }
-  
-  .banner button{
-      width: 400px;
-      height: 5rem;
-      background: transparent;
-      border: 1px solid #050505;
-      border-radius: 10px;
-      background-color: #04261f;
-  }
-  .banner button a{
-     font-size: 30px;
-  }
-  .banner button:hover{
-      background-color: rgb(8, 28, 20);
-  }
-  .banner button a:hover{
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-  }
-  
-  </style>
-</head>
-
-<body style="background-color:#f7f7f7;">
-  {%if request.user.is_authenticated%}
+  <body style="background-color: #f7f7f7">
+    {%if request.user.is_authenticated%} 
     {% include "ecom/customer_navbar.html" %}
-  {%else%}
-    {% include "ecom/navbar.html" %}
-  {%endif%}
-  <br><br><br>
-<abinf><!-- Banner side -->
-  <div class="banner">
-      <div class="hh">
+     {%else%} {% include "ecom/navbar.html" %} 
+     {%endif%}
+    <br /><br /><br />
+    <div>
+      <!-- Banner side -->
+      <div class="banner">
+        <div class="hh">
           <div class="h">
-              <h2>SOME INFORMATION ABOUT THE CATHOLIC YOUTH ORGANISATION</h2> <br>
+            <h2>GET TO KNOW NOVELTY</h2>
+            <br />
           </div>
-      </div>
-      
-      <div class="contain">
-          <div class="quote">
-              <h3>WHAT IS THE C.Y.O?</h3>
-              <p>
-                  The C.Y.O is an Organization which taking the parish as its base, and without regard to social class or
-                  profession, provides for young people a Christian Community life order to prepare them for active co-operation in
-                  building a living church and a better world.
-                  Further, it is the objective of the organization to inspire, direct and guide the natural creative qualities
-                  and desire of young people by promoting recreational, educational, cultural and religious programme
-                  that will adequately meet their physical, mental and spiritual needs. <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-          <div class="quote">
-              <h3>THE C.Y.O LAWS (CODES)</h3>
-              <p>
-                  1. A Crusader is honest. <br>
-                  2. A Crusader is clean. <br>
-                  3. A Crusader attends all meetings of the movement. <br>
-                  4. A Crusader prays regularly. <br>
-                  5. A Crusader is kind and helpful. <br>
-                  6. A Crusader plays fair and is a good loser. <br>
-                  7. A Crusader must give a good example. <br>
-                  8. A Crusader is all out for God and Ghana. <br>
-                  9. A Crusader does his day’s work well. <br>
-                  10. A Crusader is to serve and not to be served. <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-          <div class="quote">
-              <h3>THE C.Y.O. ANTHEM</h3>
-              <p>
-                  An army of Youth Flying the Standard of Truth <br>
-                  We’re fighting for Christ the Lord. <br>
-                  Heads lifted high Catholic action our cry. <br>
-                  And the Cross our only sword. <br>
-                  On earth’s battlefield,
-                  Never advantage we’ll yield, <br>
-                  As dauntlessly on we swing. <br>
-                  Crusaders True! Dare and do! <br>
-                  ‘Neath the Queen’s White and Blue. <br>
-                  For our Flag, for our Faith
-                  For Christ the King. <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-          <div class="quote">
-              <h3>THE C.Y.O PRAYER</h3>
-              <p>
-                  Lord Jesus, I offer you this day all my work, my hopes and struggles, my joys and sorrows. Grant me and
-                  my fellow Crusaders the grace to think like you, to work with you and to live in you. Help me to love you
-                  with all my heart and serve you with all my strength. Your Kingdom come in all our schools, offices,
-                  farms, workshops and homes. May those of us who today may be in danger of sin remain in your grace
-                  and may those who have died in our apostolate rest in peace. <br>
-                  <br>
-                  Jesus our brother and leader, we give our whole life to you. Help all men to know and love you. Make us
-                  always do what is pleasing to you. Amen <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-          <div class="quote">
-              <h3>WHO CAN BE A MEMBER OF THE C.Y.O.</h3>
-              <p>The C.Y.O is first of all for Catholic Youth, but it is open to all
-                  other Youth who wish to work for the advancement of its aims.  <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-          <div class="quote">
-              <h3>THE AIM OF THE ORGANIZATION</h3>
-              <p>Our aim is to become true friends of God and better citizens of our
-                  Country and to help others to do the same <br>
-                  <span>My Name</span>
-              </p>
-          </div>
-      </div>
+        </div>
 
-     <div class="bu">
-      <button>
-        <a href="#">Click here to see more info.</a>
-      </button>
+        <div class="contain">
+          <div class="quote">
+            <h3>Project Organization</h3>
+            <p>
+              This feature serves as the central hub for all your novel
+              projects. Within the platform, you can create separate projects
+              for each novel you're working on, keeping all relevant
+              information, documents, and notes organized and easily accessible.
+              Whether you're brainstorming ideas, outlining chapters, or
+              drafting scenes, you can manage everything within the context of
+              your specific project. <br />
+            </p>
+          </div>
+          <div class="quote">
+            <h3>Character and Plot Development</h3>
+            <p>
+              Novel Management System provides tools to assist in the
+              development of characters and plots. You can create detailed
+              profiles for each character, including their backgrounds,
+              motivations, and relationships. Additionally, you can outline plot
+              points, story arcs, and key events, ensuring consistency and
+              coherence throughout your narrative.
+            </p>
+          </div>
+          <div class="quote">
+            <h3>Collaboration Tools</h3>
+            <p>
+              Collaboration is made seamless with Novel Management System.
+              Writers can invite editors, beta readers, and co-authors to
+              collaborate on projects, allowing for real-time feedback,
+              comments, and edits. This fosters collaboration and enhances the
+              quality of your writing by incorporating diverse perspectives and
+              expertise.
+            </p>
+          </div>
+          <div class="quote">
+            <h3>Timeline Management</h3>
+            <p>
+              This feature enables you to create and manage timelines for your
+              novel projects. You can set deadlines for completing drafts,
+              revisions, and submissions, and the platform will remind you of
+              upcoming milestones. By visualizing your project timeline, you can
+              better manage your time and ensure timely completion of your
+              novel.
+            </p>
+          </div>
+          <div class="quote">
+            <h3>Analytics and Insights</h3>
+            <p>
+              Gain valuable insights into your writing process and audience
+              engagement with analytics tools. Track your writing progress,
+              including word counts, daily writing habits, and productivity
+              metrics. Additionally, monitor reader feedback, reviews, and
+              engagement metrics to understand your audience and tailor your
+              writing to their preferences.
+            </p>
+          </div>
+          <div class="quote">
+            <h3>Research Integration</h3>
+            <p>
+              Access to research materials is essential for crafting authentic
+              and engaging narratives. Novel Management System integrates
+              research tools, such as libraries, citation generators, and web
+              clipping capabilities, directly into the platform. Writers can
+              easily collect, organize, and reference research materials without
+              leaving the system, streamlining the research process.
+            </p>
+          </div>
+        </div>
+
+        <div class="bu">
+          <button>
+            <a href="#"></a>
+          </button>
+        </div>
+      </div>
     </div>
-
-  </div>
-</abinf>
-<br><br><br><br><br><br><br><br><br><br>
-  {% include "ecom/footer.html" %}
-</body>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
 </html>

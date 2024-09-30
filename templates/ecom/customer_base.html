@@ -7,7 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<title>MacMuse</title>
+<title>Novelty</title>
 
 <style>
 body {
@@ -15,7 +15,7 @@ body {
 }
 
 #navbar {
-    background-color: #01dab6;
+    background-color: gold;
     color: black;
 }
 
@@ -37,8 +37,8 @@ body {
 }
 
 .navbar-button {
-    background-color:  #2cbb00;
-    border: 1px solid  #051101;
+    background-color: #ffcc00;
+    border: 1px solid #051101;
     border-radius: 0 2px 2px 0;
     color: #565656;
     padding: 10px 0;
@@ -47,8 +47,7 @@ body {
 }
 
 .cart-button {
-    /* background-color: #bfbfbf; */
-    background-color:  #2cbb00;
+    background-color:   #ffcc00;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
     padding: 10px 0;
     text-align: center;
@@ -253,21 +252,22 @@ body {
     <div class="container">
         <div class="row row1">
             <ul class="largenav pull-right">
+              
 
                 <li class="upper-links"><a class="links" href="/my-order">Track Orders</a></li>
                 <li class="upper-links"><a class="links" href="/my-profile">Profile</a></li>
-                <li class="upper-links"><a class="links" href="/logout">Logout</a></li>
+                <li class="upper-links"><a class="links" href="{% url 'logout' %}">Logout</a></li>
                 
             </ul>
         </div>
         <div class="row row2">
             <div class="col-sm-3">
-                <h2 style="margin:0px;"><a style="text-decoration:none; color:white;" href="/"><span class="largenav">MacMuse</span></a></h2>
+                <h2 style="margin:0px;"><a style="text-decoration:none; color:white;" href="/"><span class="largenav">NOVELTY</span></a></h2>
             </div>
 
             <div class="navbar-search smallsearch col-sm-7 col-xs-11">
               <form  action="/search" method="get">
-                <div class="row"> <input class="navbar-input col-xs-11" type="search" placeholder="Search by tittle or composer name" name="query" id="query">
+                <div class="row"> <input class="navbar-input col-xs-11" type="search" placeholder="Name of novel or author" name="query" id="query">
                   <button class="navbar-button col-xs-1" type="submit">
                     <svg width="15px" height="15px">
                             <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
@@ -305,7 +305,7 @@ body {
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
-          <p>MacEli's Music scores hub - Home af all notes!<br>
+          <p>Novelty Fantasy<br>
             &copy; 2024 </p>
         </div>
       </div>

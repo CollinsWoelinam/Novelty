@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.core.mail import send_mail
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required,user_passes_test
+from django.contrib.auth import logout
 from django.contrib import messages
 from django.conf import settings
 
@@ -21,7 +22,7 @@ def home_view(request):
     
 
 
-#for showing login button for admin(by sumit)
+
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -254,6 +255,10 @@ def add_to_cart_view(request,pk):
     return response
 
 
+def logout_kraa(request):
+    logout(request)
+    return render(request,'ecom/logout.html')
+
 
 # for checkout of cart
 def cart_view(request):
@@ -452,18 +457,18 @@ def my_order_view(request):
 
 
 
-# @login_required(login_url='customerlogin')
-# @user_passes_test(is_customer)
-# def my_order_view2(request):
+@login_required(login_url='customerlogin')
+@user_passes_test(is_customer)
+def my_order_view2(request):
 
-#     products=models.Product.objects.all()
-#     if 'product_ids' in request.COOKIES:
-#         product_ids = request.COOKIES['product_ids']
-#         counter=product_ids.split('|')
-#         product_count_in_cart=len(set(counter))
-#     else:
-#         product_count_in_cart=0
-#     return render(request,'ecom/my_order.html',{'products':products,'product_count_in_cart':product_count_in_cart})    
+    products=models.Product.objects.all()
+    if 'product_ids' in request.COOKIES:
+        product_ids = request.COOKIES['product_ids']
+        counter=product_ids.split('|')
+        product_count_in_cart=len(set(counter))
+    else:
+        product_count_in_cart=0
+    return render(request,'ecom/my_order.html',{'products':products,'product_count_in_cart':product_count_in_cart})    
 
 
 
@@ -545,6 +550,11 @@ def edit_profile_view(request):
 def aboutus_view(request):
     return render(request,'ecom/aboutus.html')
 
+
+def logout_kraa(request):
+    return render(request,'ecom/logout.html')
+
+
 def contactus_view(request):
     sub = forms.ContactusForm()
     if request.method == 'POST':
@@ -556,6 +566,3 @@ def contactus_view(request):
             send_mail(str(name)+' || '+str(email),message, settings.EMAIL_HOST_USER, settings.EMAIL_RECEIVING_USER, fail_silently = False)
             return render(request, 'ecom/contactussuccess.html')
     return render(request, 'ecom/contactus.html', {'form':sub})
-
-
-# macmuse

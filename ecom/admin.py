@@ -17,6 +17,3 @@ class FeedbackAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Feedback, FeedbackAdmin)
 # Register your models here.
-
-
-# @macmuse
